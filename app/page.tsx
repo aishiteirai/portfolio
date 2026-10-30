@@ -118,8 +118,10 @@ export default function Home() {
                 aria-label="Um gato feito de nebulosa brincando com uma galáxia. Arraste e arremesse a galáxia."
               />
               <figcaption id="catHint">
-                Arraste e arremesse a galáxia (no celular, toque nela e arraste). Segure um pouco antes de soltar
-                para o gato armar o bote.
+                <span className="long">
+                  Arraste e arremesse a galáxia. Segure um pouco antes de soltar para o gato armar o bote.
+                </span>
+                <span className="short">Toque na galáxia e arraste para jogar. Segure antes de soltar: o gato arma o bote.</span>
               </figcaption>
             </figure>
           </div>
