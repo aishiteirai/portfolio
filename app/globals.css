@@ -183,7 +183,10 @@ main{position:relative;z-index:3}
 footer{position:relative;z-index:3}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:24px 36px;font-family:var(--f-mono);font-size:.7rem;color:var(--muted)}
 
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html:not([data-motion="full"]) *{animation:none!important;transition:none!important}html:not([data-motion="full"]){scroll-behavior:auto}}
+.motion{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);background:none;border:1px solid var(--faint);padding:8px 12px;cursor:pointer}
+.motion:hover{color:var(--fg);border-color:var(--wine-lit)}
+.motion b{font-weight:400;color:var(--wine-lit)}
 
 /* page frame */
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}

@@ -1,5 +1,6 @@
 import Universe from '@/components/Universe';
 import CopyEmail from '@/components/CopyEmail';
+import MotionToggle from '@/components/MotionToggle';
 import { links, projects } from '@/lib/projects';
 
 /* `data-scene` marks which camera shot each section asks for; the solar system reads them while scrolling. */
@@ -34,6 +35,7 @@ export default function Home() {
                 <a href={links.linkedin} target="_blank" rel="noopener">LinkedIn</a>
                 <a href="#contato">E-mail</a>
               </div>
+              <MotionToggle />
             </div>
           </div>
           <span className="hint">Role para entrar no sistema</span>
