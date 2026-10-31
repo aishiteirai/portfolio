@@ -17,7 +17,10 @@ export default function Universe() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const shared: { cat: NebulaCat | null; quality: number } = { cat: null, quality: 1 };
+    const shared: {
+      cat: NebulaCat | null; exCat: NebulaCat | null; quality: number;
+      makeCat: ((stage: HTMLElement) => NebulaCat) | null;
+    } = { cat: null, exCat: null, quality: 1, makeCat: (el) => startNebulaCat(el, null) };
     const stopSystem = initSolarSystem({ canvas, projects, shared });
 
     /* the cat is built only when the contact section comes near, and pauses when it leaves */
@@ -53,10 +56,12 @@ export default function Universe() {
       <div className="veil" aria-hidden="true" />
       <div className="labels" id="labels" />
       <div className="explore-ui" id="exUi" hidden>
+        <div className="ex-cat" id="exCatStage" aria-label="O sistema solar visto de muito longe: uma galáxia com que um gato de nebulosa brinca." />
         <button className="ex-close" id="exClose" type="button">
           Voltar ao portfólio <span aria-hidden="true">×</span>
         </button>
         <aside className="ex-card" id="exCard" aria-live="polite" hidden />
+        <button className="ex-back" id="exBack" type="button" hidden>Voltar ao sistema solar</button>
         <p className="ex-hint" id="exHint">
           Arraste para girar · role ou use dois dedos para aproximar · toque num planeta
         </p>
