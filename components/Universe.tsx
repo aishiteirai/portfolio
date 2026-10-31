@@ -17,7 +17,7 @@ export default function Universe() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const shared: { cat: NebulaCat | null } = { cat: null };
+    const shared: { cat: NebulaCat | null; quality: number } = { cat: null, quality: 1 };
     const stopSystem = initSolarSystem({ canvas, projects, shared });
 
     /* the cat is built only when the contact section comes near, and pauses when it leaves */
@@ -28,6 +28,7 @@ export default function Universe() {
         if (e.isIntersecting && !shared.cat) {
           try {
             shared.cat = startNebulaCat(stage, document.getElementById('catHint'));
+            if (shared.quality < 1) shared.cat.setQuality(shared.quality);
           } catch {
             const fig = stage.closest<HTMLElement>('.catstage');
             if (fig) fig.hidden = true;
