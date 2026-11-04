@@ -8,7 +8,7 @@ const mono = JetBrains_Mono({ subsets: ['latin'], weight: ['400'], variable: '--
 
 export const metadata: Metadata = {
   title: 'Ryan Corazza',
-  description: 'Ryan Corazza, dev full-stack com foco em back-end. Projetos em órbita de uma estrela.',
+  description: 'Ryan Corazza, dev back-end júnior (Java/Spring Boot, Python/Flask), aberto a vagas CLT. Projetos, experiência e contato.',
 };
 
 export const viewport: Viewport = {
